@@ -1,0 +1,22 @@
+server:
+  port: 8686
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/ShopApp?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    #url: ${SPRING_DATASOURCE_URL:jdbc:mysql://ubuntu-server-01.local:3399/ShopApp?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ${MYSQL_ROOT_PASSWORD:blackclover}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none #ch? này mà s?a thành drop-create thì r?t nguy
+      #ddl-auto: validate
+      #Hibernate s? không t?o, s?a ??i ho?c xóa b?t k? b?ng, c?t hay ràng bu?c nào trong c? s? d? li?u
+      #validate th??ng ???c s? d?ng trong môi tr??ng production
+      #N?u có s? khác bi?t gi?a c?u trúc c? s? d? li?u và các entity class
+      #l?i s? ???c hi?n th? và yêu c?u s?a ??i c?u trúc c? s? d? li?u m?t cách th? công
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      format_sql: true

@@ -10,13 +10,17 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none #ch? này mà s?a thành drop-create thì r?t nguy
+      ddl-auto: none #ch? nï¿½y mï¿½ s?a thï¿½nh drop-create thï¿½ r?t nguy
       #ddl-auto: validate
-      #Hibernate s? không t?o, s?a ??i ho?c xóa b?t k? b?ng, c?t hay ràng bu?c nào trong c? s? d? li?u
-      #validate th??ng ???c s? d?ng trong môi tr??ng production
-      #N?u có s? khác bi?t gi?a c?u trúc c? s? d? li?u và các entity class
-      #l?i s? ???c hi?n th? và yêu c?u s?a ??i c?u trúc c? s? d? li?u m?t cách th? công
+      #Hibernate s? khï¿½ng t?o, s?a ??i ho?c xï¿½a b?t k? b?ng, c?t hay rï¿½ng bu?c nï¿½o trong c? s? d? li?u
+      #validate th??ng ???c s? d?ng trong mï¿½i tr??ng production
+      #N?u cï¿½ s? khï¿½c bi?t gi?a c?u trï¿½c c? s? d? li?u vï¿½ cï¿½c entity class
+      #l?i s? ???c hi?n th? vï¿½ yï¿½u c?u s?a ??i c?u trï¿½c c? s? d? li?u m?t cï¿½ch th? cï¿½ng
     properties:
       hibernate:
       dialect: org.hibernate.dialect.MySQL8Dialect
       format_sql: true
+    messages:
+      basename: i18n/messages
+      encoding: UTF-8
+      default-locale: en
